@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>BERHITUNG BERSAMA WANA</h3>
+    <div>
+        <button type="button" id="C1">luas persegi</button>
+        <button type="button" id="C2">luas segitiga</button>
+    </div>
+
+    <div class="persegi">
+        <div>
+            nilai panjang
+            <input type="number" id="PJ">
+        </div>
+
+        <div>
+            nilai lebar
+            <input type="number" id="LB">
+        </div>
+
+        <div>
+            
+           <button type="button" id="hitungpersegi">hitung luas</button>
+        </div>
+    </div>
+
+    <div class="segi3">
+        <div>
+            nilai tinggi
+            <input type="number" id="TG">
+        </div>
+
+        <div>
+            nilai alas
+            <input type="number" id="AL">
+        </div>
+
+        <div>
+            
+           <button type="button" id="hitungsegi3">hitung luas</button>
+        </div>
+    </div>
+    </div>
+
+    <div class="hasil"></div>
+
+    <script src="jquery-3.7.0..js"></script>
+    <script>
+        $(function(){
+            $(".persegi").hide();
+            $(".segi3").hide();
+
+            $("#C1").click(function(){
+                $(".segi3").hide(1500);
+                $(".persegi").show(1500);
+                $(".hasil").html("");
+                $("h3").html("Hitung Luas Persegi");
+            });
+
+            $("#C2").click(function(){
+                $(".persegi").hide(1500);
+                $(".segi3").show(1500);
+                $(".hasil").html("");
+                $("h3").html("Hitung Luas Segitiga");
+            });
+
+            $("#hitungpersegi").click(function(){
+                let P = $("#PJ").val();
+                let L = $("#LB").val();
+
+                let LU = P*L;
+
+                let tx = "hitung lus pergi dengan nilai panjang"+P;
+                tx +=" dan lebar "+L+" adalah:<br>";
+                tx +="luas = panjang X lebar <br>";
+                tx +="= "+P+" X "+L+"<br>";
+                tx +="= "+LU+"<br>";
+                tx += "jadi luasnya adalah "+LU;
+                
+
+
+                $(".hasil").html(tx);
+
+            });
+            $("#hitungsegi3").click(function(){
+                let T = $("#TG").val();
+                let A = $("#AL").val();
+
+                let LU = T*A*0.5;
+
+                let tx = "hitung segitiga dengan tinggi"+T;
+                tx +=" dan alas "+A+" adalah:<br>";
+                tx +="tinggi  X alas X 0.5 <br>";
+                tx +="= "+T+" X "+A+"<br>";
+                tx +="= "+LU+"<br>";
+                tx += "jadi luasnya adalah "+LU;
+                
+
+
+                $(".hasil").html(tx);
+
+            });
+
+
+        })
+    </script>
+</body>
+</html>
